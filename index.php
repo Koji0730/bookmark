@@ -2,12 +2,13 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>本の登録フォーム</title>
+    <title>ブックマークシステム</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+
     <div class="form-container">
-        <form action="/submit-your-form-handler" method="POST">
+        <form action="insert.php" method="POST">
             <label for="name">投稿者:</label>
             <input type="text" id="name" name="name" required>
 
@@ -15,16 +16,29 @@
             <input type="text" id="title" name="title" required>
 
             <label for="genre">本のジャンル:</label>
-            <select id="genre" name="genre">
+            <select id="genre" name="genre" required>
+                <option>選択してください。</option>
                 <option value="fiction">フィクション</option>
                 <option value="nonfiction">ノンフィクション</option>
                 <option value="mystery">ミステリー</option>
                 <option value="science">科学</option>
                 <option value="history">歴史</option>
+                <option value="philosophy">哲学</option>
             </select>
 
             <label for="date">読んだ日付:</label>
             <input type="date" id="date" name="date">
+
+            <label for="age">年代:</label>
+            <select id="age" name="age" required>
+                <option value="">選択してください。</option>
+                <option value="10s">10代</option>
+                <option value="20s">20代</option>
+                <option value="30s">30代</option>
+                <option value="40s">40代</option>
+                <option value="50s">50代</option>
+                <option value="60s_and_above">60歳以上</option>
+            </select>
 
             <label for="rating">本の評価:</label>
             <div class="star-rating-container">
